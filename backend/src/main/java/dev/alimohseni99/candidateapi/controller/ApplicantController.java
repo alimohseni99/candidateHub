@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/applicant")
@@ -29,6 +30,11 @@ public class ApplicantController {
     @PostMapping
     public void newApplicant(@RequestBody ApplicantCreateDto dto){
         service.createApplicant(dto);
+    }
+
+    @DeleteMapping
+    public void deleteApplicant(@RequestBody UUID id){
+        service.deleteApplicant(id);
     }
 
 }
