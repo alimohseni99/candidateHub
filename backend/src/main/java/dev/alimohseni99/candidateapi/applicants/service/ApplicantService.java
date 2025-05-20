@@ -1,10 +1,10 @@
-package dev.alimohseni99.candidateapi.service;
+package dev.alimohseni99.candidateapi.applicants.service;
 
 
 import dev.alimohseni99.candidateapi.applicants.Applicant;
-import dev.alimohseni99.candidateapi.dto.ApplicantCreateDto;
-import dev.alimohseni99.candidateapi.exceptions.NotFound;
-import dev.alimohseni99.candidateapi.repository.ApplicantRepository;
+import dev.alimohseni99.candidateapi.applicants.dto.ApplicantCreateDto;
+import dev.alimohseni99.candidateapi.applicants.exceptions.NotFound;
+import dev.alimohseni99.candidateapi.applicants.repository.ApplicantRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.View;
 

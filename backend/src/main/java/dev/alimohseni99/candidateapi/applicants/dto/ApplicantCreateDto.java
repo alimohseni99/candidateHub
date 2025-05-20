@@ -1,4 +1,4 @@
-package dev.alimohseni99.candidateapi.dto;
+package dev.alimohseni99.candidateapi.applicants.dto;
 
 
 import dev.alimohseni99.candidateapi.applicants.Applicant;

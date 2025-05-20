@@ -1,4 +1,4 @@
-package dev.alimohseni99.candidateapi.exceptions;
+package dev.alimohseni99.candidateapi.applicants.exceptions;
 
 
 

@@ -1,4 +1,4 @@
-package dev.alimohseni99.candidateapi.repository;
+package dev.alimohseni99.candidateapi.applicants.repository;
 
 
 import dev.alimohseni99.candidateapi.applicants.Applicant;

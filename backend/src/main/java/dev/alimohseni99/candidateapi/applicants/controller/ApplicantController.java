@@ -1,9 +1,9 @@
-package dev.alimohseni99.candidateapi.controller;
+package dev.alimohseni99.candidateapi.applicants.controller;
 
 
 import dev.alimohseni99.candidateapi.applicants.Applicant;
-import dev.alimohseni99.candidateapi.dto.ApplicantCreateDto;
-import dev.alimohseni99.candidateapi.service.ApplicantService;
+import dev.alimohseni99.candidateapi.applicants.dto.ApplicantCreateDto;
+import dev.alimohseni99.candidateapi.applicants.service.ApplicantService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
