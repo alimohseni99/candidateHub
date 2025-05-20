@@ -1,0 +1,15 @@
+{
+  "projectName": "webPage",
+  "mode": "file-router",
+  "typescript": true,
+  "tailwind": true,
+  "packageManager": "npm",
+  "git": true,
+  "version": 1,
+  "framework": "react-cra",
+  "chosenAddOns": [
+    "clerk",
+    "shadcn",
+    "tanstack-query"
+  ]
+}
