@@ -1,0 +1,19 @@
+spring:
+  sql:
+    init:
+      platform: postgresql
+      mode: always
+
+    output:
+      ansi:
+        enabled: always
+
+  datasource:
+    url: jdbc:postgresql://ep-raspy-violet-a2x88bci-pooler.eu-central-1.aws.neon.tech/candidatehub?user=candidatehub_owner&password=npg_m0fste9JVlOp&sslmode=require
+
+  jpa:
+    show-sql: true
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: update
+      spring.jpa.database-platform: org.hibernate.dialect.PostgreSQLDialect

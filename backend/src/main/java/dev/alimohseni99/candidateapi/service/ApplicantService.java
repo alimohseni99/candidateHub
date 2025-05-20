@@ -4,6 +4,7 @@ package dev.alimohseni99.candidateapi.service;
 import dev.alimohseni99.candidateapi.applicants.Applicant;
 import dev.alimohseni99.candidateapi.dto.ApplicantCreateDto;
 import dev.alimohseni99.candidateapi.exceptions.NotFound;
+import dev.alimohseni99.candidateapi.repository.ApplicantRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.View;
 
@@ -16,28 +17,30 @@ import java.util.UUID;
 public class ApplicantService {
 
     private final List<Applicant> applicantList;
+    private final ApplicantRepository repository;
     private final View error;
 
-    public ApplicantService(View error) {
+    public ApplicantService(View error, ApplicantRepository repository) {
         this.applicantList = new ArrayList<>();
+        this.repository = repository;
         this.error = error;
     }
 
     public List<Applicant> getApplicantList() {
-        return applicantList;
+        return repository.findAll();
     }
 
     public void createApplicant(ApplicantCreateDto dto){
-        applicantList.add(ApplicantCreateDto.fromDto(dto));
+        repository.save(ApplicantCreateDto.fromDto(dto));
     }
 
     public void deleteApplicant(UUID id){
-        Optional<Applicant> applicant = applicantList.stream().filter(T -> T.getId().equals(id)).findFirst();
+        Optional<Applicant> applicant = repository.findById(id);
 
         if (applicant.isEmpty()){
             throw new NotFound("Could not find the user with ID: " + id.toString());
         }
-        applicantList.remove(applicant.get());
+        repository.delete(applicant.get());
     }
 
 }
