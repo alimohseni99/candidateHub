@@ -3,7 +3,7 @@ package dev.alimohseni99.candidateapi.applicants.service;
 
 import dev.alimohseni99.candidateapi.applicants.Applicant;
 import dev.alimohseni99.candidateapi.applicants.dto.ApplicantCreateDto;
-import dev.alimohseni99.candidateapi.applicants.exceptions.NotFound;
+import dev.alimohseni99.candidateapi.exceptions.NotFound;
 import dev.alimohseni99.candidateapi.applicants.repository.ApplicantRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.View;
@@ -16,12 +16,10 @@ import java.util.UUID;
 @Service
 public class ApplicantService {
 
-    private final List<Applicant> applicantList;
     private final ApplicantRepository repository;
     private final View error;
 
     public ApplicantService(View error, ApplicantRepository repository) {
-        this.applicantList = new ArrayList<>();
         this.repository = repository;
         this.error = error;
     }

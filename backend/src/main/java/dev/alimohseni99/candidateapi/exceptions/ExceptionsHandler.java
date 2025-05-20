@@ -1,4 +1,4 @@
-package dev.alimohseni99.candidateapi.applicants.exceptions;
+package dev.alimohseni99.candidateapi.exceptions;
 
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
