@@ -6,11 +6,13 @@ public class Applicant {
     private String name;
     private String mail;
     private UUID id;
+    private String clerkId;
 
-    public Applicant(String name, String mail) {
+    public Applicant(String name, String mail, String clerkId) {
         this.name = name;
         this.mail = mail;
         this.id = UUID.randomUUID();
+        this.clerkId = clerkId;
     }
 
     public String getName() {
@@ -35,5 +37,13 @@ public class Applicant {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public String getClerkId() {
+        return clerkId;
+    }
+
+    public void setClerkId(String clerkId) {
+        this.clerkId = clerkId;
     }
 }
