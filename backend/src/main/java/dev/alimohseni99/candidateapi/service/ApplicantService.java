@@ -3,6 +3,7 @@ package dev.alimohseni99.candidateapi.service;
 
 import dev.alimohseni99.candidateapi.applicants.Applicant;
 import dev.alimohseni99.candidateapi.dto.ApplicantCreateDto;
+import dev.alimohseni99.candidateapi.exceptions.NotFound;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.View;
 
@@ -34,7 +35,7 @@ public class ApplicantService {
         Optional<Applicant> applicant = applicantList.stream().filter(T -> T.getId().equals(id)).findFirst();
 
         if (applicant.isEmpty()){
-            throw new RuntimeException("Could not find the user " + id.toString());
+            throw new NotFound("Could not find the user with ID: " + id.toString());
         }
         applicantList.remove(applicant.get());
     }
