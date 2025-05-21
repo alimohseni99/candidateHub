@@ -1,6 +1,6 @@
-import { Link } from '@tanstack/react-router'
+import { Link } from "@tanstack/react-router";
 
-import ClerkHeader from '../integrations/clerk/header-user.tsx'
+import ClerkHeader from "../integrations/clerk/header-user.tsx";
 
 export default function Header() {
   return (
@@ -15,7 +15,7 @@ export default function Header() {
         </div>
 
         <div className="px-2 font-bold">
-          <Link to="/demo/tanstack-query">TanStack Query</Link>
+          <Link to="/demo/tanstack-query">My Job Applications</Link>
         </div>
       </nav>
 
@@ -23,5 +23,5 @@ export default function Header() {
         <ClerkHeader />
       </div>
     </header>
-  )
+  );
 }
