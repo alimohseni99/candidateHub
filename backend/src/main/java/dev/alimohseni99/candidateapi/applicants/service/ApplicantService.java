@@ -8,7 +8,6 @@ import dev.alimohseni99.candidateapi.applicants.repository.ApplicantRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.View;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -28,7 +27,7 @@ public class ApplicantService {
         return repository.findAll();
     }
 
-    public Applicant getApplicantById(ApplicantCreateDto dto){
+    public Applicant getApplicantByClerkId(ApplicantCreateDto dto){
         Optional<Applicant> applicant = repository.getApplicantsByClerkId(dto.clerkId());
         return applicant.orElseGet(() -> createApplicant(dto));
     }
