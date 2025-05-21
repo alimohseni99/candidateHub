@@ -3,6 +3,7 @@ import { fetchJobs } from "../misc/fetchCalls";
 import type { jobInfo } from "./jobDisplay";
 import JobDislplay from "./jobDisplay";
 import LoaderAnimation from "@/components/loader";
+import JobAdd from "./jobbAdd";
 
 export default function JobContainer(props: prop) {
   const { isPending, isError, data, error } = useQuery<jobInfo[]>({
@@ -30,6 +31,7 @@ export default function JobContainer(props: prop) {
         {data.map((s, key) => {
           return <JobDislplay key={key} data={s} />;
         })}
+        <JobAdd id={props.id} />
       </section>
     </>
   );

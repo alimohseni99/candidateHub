@@ -1,7 +1,7 @@
 import type { applicant } from "@/feature/applicants/misc/fetchCalls";
 import { useUser } from "@clerk/clerk-react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchJobs, fetchUser } from "../misc/fetchCalls";
+import { fetchUser } from "../misc/fetchCalls";
 import LoaderAnimation from "@/components/loader";
 import JobContainer from "./jobContainer";
 
