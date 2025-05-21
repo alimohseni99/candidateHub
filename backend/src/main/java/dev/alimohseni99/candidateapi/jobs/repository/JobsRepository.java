@@ -5,8 +5,12 @@ import dev.alimohseni99.candidateapi.jobs.Jobs;
 import org.springframework.data.repository.ListCrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.UUID;
 
 @Repository
 public interface JobsRepository extends ListCrudRepository<Jobs, UUID> {
+
+    List<Jobs> findAllByApplicantId(UUID applicantId);
+    
 }

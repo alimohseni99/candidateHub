@@ -27,6 +27,10 @@ public class JobsService {
         return repository.findAll();
     }
 
+    public List<Jobs> getJobListById(UUID id){
+            return repository.findAllByApplicantId(id);
+    }
+
     public void createJob(JobsDto dto){
        repository.save(JobsDto.newJob(dto));
     }

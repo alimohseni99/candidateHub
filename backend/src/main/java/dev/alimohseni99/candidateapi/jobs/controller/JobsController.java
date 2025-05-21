@@ -28,6 +28,11 @@ public class JobsController {
         return service.getJobsList();
     }
 
+    @GetMapping("/{id}")
+    public List<Jobs> getJobListById(@PathVariable  UUID id){
+        return service.getJobListById(id);
+    }
+
     @PostMapping
     public void createNewJob(@RequestBody JobsDto dto){
         service.createJob(dto);
@@ -37,5 +42,6 @@ public class JobsController {
     public void deleteJob(@RequestBody UUID id){
         service.deleteJob(id);
     }
+
 
 }
