@@ -27,7 +27,7 @@ public class ApplicantController {
         return service.getApplicantList();
     }
 
-    @GetMapping("/user")
+    @PostMapping("/user")
     public Applicant getApplicantByClerkId(@RequestBody  ApplicantCreateDto dto){
         return service.getApplicantByClerkId(dto);
     }

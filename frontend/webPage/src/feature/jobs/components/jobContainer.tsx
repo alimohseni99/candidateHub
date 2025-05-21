@@ -4,14 +4,14 @@ import type { jobInfo } from "./jobDisplay";
 import JobDislplay from "./jobDisplay";
 import LoaderAnimation from "@/components/loader";
 
-export default function JobContainer() {
+export default function JobContainer(props: prop) {
   const { isPending, isError, data, error } = useQuery<jobInfo[]>({
     queryKey: ["jobs"],
-    queryFn: fetchJobs,
+    queryFn: () => fetchJobs(props.id),
   });
 
   if (isPending) {
-    return <LoaderAnimation />;
+    return <LoaderAnimation text="Loading Jobs" />;
   }
 
   if (isError) {
@@ -25,7 +25,7 @@ export default function JobContainer() {
 
   return (
     <>
-      <div>Jobs:</div>
+      <div>Jobs for: {props.id}</div>
       <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-emerald-500 p-4 rounded-md">
         {data.map((s, key) => {
           return <JobDislplay key={key} data={s} />;
@@ -34,3 +34,7 @@ export default function JobContainer() {
     </>
   );
 }
+
+type prop = {
+  id: string;
+};

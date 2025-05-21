@@ -1,6 +1,20 @@
+import type { jobUser } from "../components/userContainer";
+
 const url = import.meta.env.VITE_BACKEND_URL;
 
-export function fetchJobs() {
-  console.log("fetching with " + url + "/api/jobs");
-  return fetch(url + "/api/jobs").then((data) => data.json());
+export function fetchJobs(id: string) {
+  const path = url + "/api/jobs/" + id;
+  console.log("Fetch path: " + path);
+  return fetch(path).then((data) => data.json());
+}
+
+export function fetchUser(user: jobUser) {
+  console.log(JSON.stringify(user));
+  return fetch(url + "/api/applicant/user", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+    body: JSON.stringify(user),
+  }).then((data) => data.json());
 }
