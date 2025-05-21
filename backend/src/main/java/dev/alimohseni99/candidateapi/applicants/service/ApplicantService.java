@@ -28,8 +28,13 @@ public class ApplicantService {
         return repository.findAll();
     }
 
-    public void createApplicant(ApplicantCreateDto dto){
-        repository.save(ApplicantCreateDto.fromDto(dto));
+    public Applicant getApplicantById(ApplicantCreateDto dto){
+        Optional<Applicant> applicant = repository.getApplicantsByClerkId(dto.clerkId());
+        return applicant.orElseGet(() -> createApplicant(dto));
+    }
+
+    public Applicant createApplicant(ApplicantCreateDto dto){
+        return repository.save(ApplicantCreateDto.fromDto(dto));
     }
 
     public void deleteApplicant(UUID id){
