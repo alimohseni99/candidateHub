@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchJobs } from "../misc/fetchCalls";
 import type { jobInfo } from "./jobDisplay";
 import JobDislplay from "./jobDisplay";
+import LoaderAnimation from "@/components/loader";
 
 export default function JobContainer() {
   const { isPending, isError, data, error } = useQuery<jobInfo[]>({
@@ -10,7 +11,7 @@ export default function JobContainer() {
   });
 
   if (isPending) {
-    return <span>Loading...</span>;
+    return <LoaderAnimation />;
   }
 
   if (isError) {
@@ -25,7 +26,7 @@ export default function JobContainer() {
   return (
     <>
       <div>Jobs:</div>
-      <section className="flex ml-5 mr-5 gap-10 flex-wrap">
+      <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-emerald-500 p-4 rounded-md">
         {data.map((s, key) => {
           return <JobDislplay key={key} data={s} />;
         })}
