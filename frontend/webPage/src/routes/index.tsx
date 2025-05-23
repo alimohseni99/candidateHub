@@ -1,4 +1,5 @@
 import { ModeToggle } from "@/components/mode-toggle";
+import UserContainer from "@/feature/jobs/components/userContainer";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -11,7 +12,7 @@ function App() {
       <div className="flex justify-end p-2">
         <ModeToggle />
       </div>
-      <h1>Hello World</h1>
+      <UserContainer />
     </div>
   );
 }

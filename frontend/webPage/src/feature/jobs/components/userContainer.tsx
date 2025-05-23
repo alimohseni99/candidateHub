@@ -4,6 +4,12 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchUser } from "../misc/fetchCalls";
 import JobContainer from "./jobContainer";
 
+export type jobUser = {
+  name: string;
+  mail: string;
+  clerkId: string;
+};
+
 export default function UserContainer() {
   const { isLoaded, isSignedIn, user } = useUser();
 
@@ -30,18 +36,12 @@ export default function UserContainer() {
   }
 
   if (isError) {
-    return <div>An Error has occured</div>;
+    return <div>An Error has occurred</div>;
   }
 
   return (
     <>
-      <JobContainer id={data.id} />
+      <JobContainer id={data.id} name={data.name} />
     </>
   );
 }
-
-export type jobUser = {
-  name: string;
-  mail: string;
-  clerkId: string;
-};
