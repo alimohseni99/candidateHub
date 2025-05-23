@@ -26,7 +26,9 @@ export default function JobContainer(props: prop) {
 
   return (
     <>
-      <div>Jobs for: {props.id}</div>
+      <div className="ml-5 text-lg font-bold">
+        Showing jobs for id: {props.id}
+      </div>
       <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-emerald-500 p-4 rounded-md">
         {data.map((s, key) => {
           return <JobDislplay key={key} data={s} />;
