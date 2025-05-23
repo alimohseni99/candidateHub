@@ -20,7 +20,7 @@ export default function JobAddForm(prop: idProp) {
   return (
     <>
       <form className="flex-col flex" action={(e) => post(e)}>
-        <span>Job Title:</span>
+        <span>Job Title</span>
         <input
           className="bg-slate-200 border-2 border-s border-slate-300"
           type="text"
@@ -28,11 +28,16 @@ export default function JobAddForm(prop: idProp) {
         />
         <span>Link</span>
         <input
-          className="bg-slate-200 border-2 border-s border-slate-300"
+          className="bg-slate-200 border-2 border-s border-slate-300 rounded-sm"
           type="text"
           name="link"
         />
-        <button type="submit">Create</button>
+        <button
+          type="submit"
+          className="border-2 bg-emerald-500 mt-2 rounded-sm hover:bg-emerald-300"
+        >
+          Create
+        </button>
       </form>
     </>
   );

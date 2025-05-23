@@ -19,9 +19,14 @@ export default function JobAdd(prop: idProp) {
 
   return (
     <>
-      <section className="bg-slate-100 flex flex-col justify-center">
+      <section className="bg-slate-100 flex flex-col justify-center p-2 rounded-sm">
         <JobAddForm id={prop.id} />
-        <button onClick={() => setActive(false)}>Back</button>
+        <button
+          onClick={() => setActive(false)}
+          className="border-2 bg-slate-300 mt-2 rounded-sm hover:bg-slate-100"
+        >
+          Back
+        </button>
       </section>
     </>
   );
