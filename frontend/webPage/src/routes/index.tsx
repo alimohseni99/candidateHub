@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import { ModeToggle } from "@/components/mode-toggle";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({
@@ -7,8 +7,10 @@ export const Route = createFileRoute("/")({
 
 function App() {
   return (
-    <div className="text-center bg-foreground">
-      <Button className="cursor-pointer">Click Me</Button>
+    <div className="text-center  h-screen">
+      <div className="flex justify-end p-2">
+        <ModeToggle />
+      </div>
       <h1>Hello World</h1>
     </div>
   );
