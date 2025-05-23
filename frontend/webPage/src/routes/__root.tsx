@@ -18,10 +18,8 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
     <>
       <ClerkProvider>
         <Header />
-
         <Outlet />
         <TanStackRouterDevtools />
-
         <TanStackQueryLayout />
       </ClerkProvider>
     </>
