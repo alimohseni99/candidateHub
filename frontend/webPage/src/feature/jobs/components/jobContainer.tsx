@@ -2,7 +2,6 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchJobs } from "../misc/fetchCalls";
 import type { jobInfo } from "./jobDisplay";
 import JobDislplay from "./jobDisplay";
-import LoaderAnimation from "@/components/loader";
 import JobAdd from "./jobbAdd";
 
 export default function JobContainer(props: prop) {
@@ -12,7 +11,7 @@ export default function JobContainer(props: prop) {
   });
 
   if (isPending) {
-    return <LoaderAnimation text="Loading Jobs" />;
+    return <div>Loading...</div>;
   }
 
   if (isError) {

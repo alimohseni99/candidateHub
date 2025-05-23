@@ -2,7 +2,6 @@ import type { applicant } from "@/feature/applicants/misc/fetchCalls";
 import { useUser } from "@clerk/clerk-react";
 import { useQuery } from "@tanstack/react-query";
 import { fetchUser } from "../misc/fetchCalls";
-import LoaderAnimation from "@/components/loader";
 import JobContainer from "./jobContainer";
 
 export default function UserContainer() {
@@ -27,7 +26,7 @@ export default function UserContainer() {
   });
 
   if (isPending) {
-    return <LoaderAnimation text="Fetching user data" />;
+    return <div>Loading...</div>;
   }
 
   if (isError) {
