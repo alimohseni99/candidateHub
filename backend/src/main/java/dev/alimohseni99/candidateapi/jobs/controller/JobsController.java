@@ -38,8 +38,8 @@ public class JobsController {
         service.createJob(dto);
     }
 
-    @DeleteMapping
-    public void deleteJob(@RequestBody UUID id){
+    @DeleteMapping("/{id}")
+    public void deleteJob(@PathVariable UUID id){
         service.deleteJob(id);
     }
 

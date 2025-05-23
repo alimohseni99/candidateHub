@@ -1,5 +1,17 @@
+import { useQueryClient } from "@tanstack/react-query";
+import { deleteJob } from "../misc/fetchCalls";
+
 export default function JobDislplay(prop: props) {
-  const { title, status, url } = prop.data;
+  const queryClient = useQueryClient();
+
+  async function deleteJobClick(jobId: string) {
+    const status = await deleteJob(jobId);
+    if (status == 200) {
+      queryClient.invalidateQueries({ queryKey: ["jobs"] });
+    }
+  }
+
+  const { title, status, url, id } = prop.data;
   return (
     <>
       <section className="bg-slate-100 shadow-md rounded-sm hover:bg-slate-50 transition-colors duration-75">
@@ -15,6 +27,12 @@ export default function JobDislplay(prop: props) {
         >
           Link
         </a>
+        <div
+          className="bg-red-400 border-2 ml-2 mr-2 mb-2 text-center rounded-sm hover:bg-red-200"
+          onClick={() => deleteJobClick(id)}
+        >
+          Delete
+        </div>
       </section>
     </>
   );

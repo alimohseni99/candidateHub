@@ -29,6 +29,12 @@ export function postJob(input: createJobInputData) {
   }).then((data) => data.status);
 }
 
+export function deleteJob(id: string) {
+  return fetch(url + "/api/jobs/" + id, { method: "DELETE" }).then(
+    (data) => data.status
+  );
+}
+
 export type createJobInputData = {
   title: string;
   status: string;
