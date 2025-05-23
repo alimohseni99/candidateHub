@@ -1,7 +1,9 @@
+import { useQueryClient } from "@tanstack/react-query";
 import { postJob, type createJobInputData } from "../misc/fetchCalls";
 import type { idProp } from "./jobbAdd";
 
 export default function JobAddForm(prop: idProp) {
+  const queryClient = useQueryClient();
   async function post(formEvent: FormData) {
     const title = formEvent.get("title");
     const link = formEvent.get("link");
@@ -14,7 +16,8 @@ export default function JobAddForm(prop: idProp) {
       url: link.toString(),
       applicantId: prop.id,
     };
-    postJob(postData);
+    await postJob(postData);
+    queryClient.invalidateQueries({ queryKey: ["jobs"] });
   }
 
   return (
