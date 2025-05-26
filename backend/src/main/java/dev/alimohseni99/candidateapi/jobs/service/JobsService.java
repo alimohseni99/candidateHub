@@ -7,6 +7,7 @@ import dev.alimohseni99.candidateapi.jobs.Status;
 import dev.alimohseni99.candidateapi.jobs.dto.JobsDto;
 import dev.alimohseni99.candidateapi.jobs.repository.JobsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
@@ -35,6 +36,18 @@ public class JobsService {
 
     public List<Jobs> getJobListById(UUID id){
             return repository.findAllByApplicantId(id);
+    }
+
+    public void updateJobStatus(UUID id, Status newStatus) {
+        Optional<Jobs> job = repository.findById(id);
+        if (job.isPresent()) {
+            Jobs jobs = job.get();
+            jobs.setStatus(newStatus);
+            repository.save(jobs);
+        }
+        else {
+            throw new NotFound("Job not found");
+        }
     }
 
     public void createJob(JobsDto dto){
