@@ -14,7 +14,7 @@ export default function JobDislplay(prop: props) {
   const { title, status, url, id } = prop.data;
   return (
     <>
-      <section className="bg-slate-100 shadow-md rounded-sm hover:bg-slate-50 transition-colors duration-75">
+      <section className="bg-card shadow-md rounded-sm  transition-colors duration-75">
         <div className="font-bold text-xl pr-2 pl-2">{title}</div>
         <div className="flex gap-2 pr-2 pl-2">
           <div>Status: </div>

@@ -28,7 +28,7 @@ export default function JobContainer({ id, name }: prop) {
   return (
     <>
       <div className="ml-5 text-lg font-bold">Showing jobs for: {name}</div>
-      <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-emerald-500 p-4 rounded-md">
+      <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-primary p-4 rounded-md">
         {data.map((s, key) => {
           return <JobDisplay key={key} data={s} />;
         })}
