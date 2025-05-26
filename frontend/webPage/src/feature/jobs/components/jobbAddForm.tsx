@@ -25,7 +25,7 @@ export default function JobAddForm(prop: idProp) {
       <form className="flex-col flex" action={(e) => post(e)}>
         <span>Job Title</span>
         <input
-          className="bg-secondary border-2 border-s border-slate-300"
+          className="bg-secondary border-2 rounded-sm border-s border-slate-300"
           type="text"
           name="title"
         />

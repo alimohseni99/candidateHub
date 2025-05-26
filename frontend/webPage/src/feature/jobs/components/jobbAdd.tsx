@@ -8,7 +8,7 @@ export default function JobAdd(prop: idProp) {
     return (
       <>
         <section
-          className="bg-card shadow-md rounded-sm flex-col justify-center text-center p-2 hover:bg-slate-50"
+          className="bg-card shadow-md rounded-sm flex-col justify-center text-center p-2 hover:bg-secondary"
           onClick={() => setActive(true)}
         >
           <div className="font-extrabold text-6xl">+</div>
