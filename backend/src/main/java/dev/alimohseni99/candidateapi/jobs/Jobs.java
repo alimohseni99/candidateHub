@@ -15,13 +15,13 @@ public class Jobs {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String title;
-    private Status status;
+    private String status;
     private String url;
     private UUID applicantId;
 
     public Jobs( String title, Status status, String url, UUID applicantId) {
         this.title = title;
-        this.status = status;
+        this.status = status.toString();
         this.url = url;
         this.applicantId = applicantId;
     }
@@ -42,12 +42,12 @@ public class Jobs {
         this.title = title;
     }
 
-    public Status getStatus() {
-        return status;
+    public String getStatus() {
+        return status.toString();
     }
 
     public void setStatus(Status status) {
-        this.status = status;
+        this.status = status.toString();
     }
 
     public String getUrl() {
