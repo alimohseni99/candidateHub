@@ -3,6 +3,7 @@ package dev.alimohseni99.candidateapi.jobs.controller;
 
 import dev.alimohseni99.candidateapi.applicants.dto.ApplicantCreateDto;
 import dev.alimohseni99.candidateapi.jobs.Jobs;
+import dev.alimohseni99.candidateapi.jobs.Status;
 import dev.alimohseni99.candidateapi.jobs.dto.JobsDto;
 import dev.alimohseni99.candidateapi.jobs.service.JobsService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,11 @@ public class JobsController {
     @GetMapping("/{id}")
     public List<Jobs> getJobListById(@PathVariable  UUID id){
         return service.getJobListById(id);
+    }
+
+    @GetMapping("/statuses")
+    public List<Status> getAllJobsStatus() {
+        return service.getAllJobsStatus();
     }
 
     @PostMapping

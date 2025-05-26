@@ -3,11 +3,13 @@ package dev.alimohseni99.candidateapi.jobs.service;
 
 import dev.alimohseni99.candidateapi.exceptions.NotFound;
 import dev.alimohseni99.candidateapi.jobs.Jobs;
+import dev.alimohseni99.candidateapi.jobs.Status;
 import dev.alimohseni99.candidateapi.jobs.dto.JobsDto;
 import dev.alimohseni99.candidateapi.jobs.repository.JobsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -25,6 +27,10 @@ public class JobsService {
 
     public List<Jobs> getJobsList(){
         return repository.findAll();
+    }
+
+    public List<Status> getAllJobsStatus() {
+        return Arrays.asList(Status.values());
     }
 
     public List<Jobs> getJobListById(UUID id){
