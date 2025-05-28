@@ -31,9 +31,7 @@ export default function JobContainer({ id }: prop) {
             return <JobDisplay key={key} {...s} />;
           })}
         </div>
-        <div>
-          <JobAdd id={id} />
-        </div>
+        <div>{/* <JobAdd id={id} /> */}</div>
       </section>
     </>
   );

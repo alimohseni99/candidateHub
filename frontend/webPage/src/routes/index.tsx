@@ -41,9 +41,7 @@ function App() {
         </Blockquote>
       </div>
       <main>
-        <div>
-          <LoginContainer />
-        </div>
+        <LoginContainer />
       </main>
     </div>
   );
