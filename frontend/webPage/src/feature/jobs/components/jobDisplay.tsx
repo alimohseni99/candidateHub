@@ -36,8 +36,8 @@ export default function JobDisplay({ title, status, url }: jobInfo) {
               label={title}
               className="border-none"
             />
-            <div className="">
-              <Select defaultValue={status}>
+            <div className="flex flex-col gap-2 justify-center items-center">
+              <Select>
                 <SelectTrigger className="flex flex-start bg-blue-500 rounded-full px-2 ">
                   <SelectValue placeholder={status} />
                 </SelectTrigger>
@@ -46,19 +46,14 @@ export default function JobDisplay({ title, status, url }: jobInfo) {
                     <SelectLabel className="flex flex-start text-gray-400">
                       To-do
                     </SelectLabel>
-                    {statusOptions.map((s, key) => {
-                      return (
-                        <SelectItem
-                          key={key}
-                          value={s}
-                          className="flex flex-start mt-2 bg-blue-500 rounded-full pl-2"
-                        >
-                          {s}
-                        </SelectItem>
-                      );
-                    })}
+                    <SelectItem
+                      value="Applied"
+                      className="flex flex-start bg-blue-500 rounded-full px-2 cursor-pointer "
+                    >
+                      Applied
+                    </SelectItem>
 
-                    <SelectLabel className="flex flex-start text-gray-400">
+                    <SelectLabel className="flex flex-start text-gray-400 mt-4">
                       In-progress
                     </SelectLabel>
                     {statusOptions.map((s, key) => {
@@ -66,7 +61,7 @@ export default function JobDisplay({ title, status, url }: jobInfo) {
                         <SelectItem
                           key={key}
                           value={s}
-                          className="flex flex-start mt-2 bg-blue-500 rounded-full pl-2"
+                          className="flex flex-start mt-2 bg-blue-500 rounded-full pl-2 cursor-pointer"
                         >
                           {s}
                         </SelectItem>
