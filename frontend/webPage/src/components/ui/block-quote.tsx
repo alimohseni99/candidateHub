@@ -10,7 +10,9 @@ const Blockquote = ({ children, className }: BlockquoteProps) => {
   return (
     <div
       className={cn(
-        "relative rounded-lg border-l-8 border-l-gray-700 bg-gray-100 py-5 pl-16 pr-5 font-sans text-lg italic leading-relaxed text-gray-500 before:absolute before:left-3 before:top-3 before:font-serif before:text-6xl before:text-gray-700 before:content-['“']",
+        "relative rounded-lg border-l-8 border-l-[var(--primary)] " +
+          "bg-[var(--muted)] py-5 pl-16 pr-5 font-sans text-lg italic leading-relaxed text-[var(--muted-foreground)] " +
+          "before:absolute before:left-3 before:top-3 before:font-serif before:text-6xl before:text-[var(--primary)] before:content-['“']",
         className
       )}
     >
@@ -23,7 +25,7 @@ const BlockquoteAuthor = ({ children, className }: BlockquoteProps) => {
   return (
     <p
       className={cn(
-        "mt-5 pr-4 text-right font-bold not-italic text-gray-700",
+        "mt-5 pr-4 text-right font-bold not-italic text-[var(--foreground)]",
         className
       )}
     >

@@ -32,7 +32,7 @@ function App() {
         </SignedOut>
         <ModeToggle />
       </div>
-      <div className="p-4 md:p-8 lg:p-12 xl:p-16">
+      <div className="p-4">
         <Blockquote>
           {quote.quote}
           <BlockquoteAuthor>{quote.author}</BlockquoteAuthor>
