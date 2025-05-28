@@ -1,7 +1,8 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { deleteJob } from "../misc/fetchCalls";
+import type { jobInfo } from "../type";
 
-export default function JobDislplay(prop: props) {
+export default function JobDisplay({ id, title, status, url }: jobInfo) {
   const queryClient = useQueryClient();
 
   async function deleteJobClick(jobId: string) {
@@ -11,7 +12,6 @@ export default function JobDislplay(prop: props) {
     }
   }
 
-  const { title, status, url, id } = prop.data;
   return (
     <>
       <section className="bg-card shadow-md rounded-sm  transition-colors duration-75">
@@ -37,15 +37,3 @@ export default function JobDislplay(prop: props) {
     </>
   );
 }
-
-export type jobInfo = {
-  id: string;
-  title: string;
-  status: string;
-  url: string;
-  applicantId: string;
-};
-
-type props = {
-  data: jobInfo;
-};

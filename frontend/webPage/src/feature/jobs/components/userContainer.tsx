@@ -5,7 +5,6 @@ import { fetchUser } from "../misc/fetchCalls";
 import JobContainer from "./jobContainer";
 
 export type jobUser = {
-  name: string;
   mail: string;
   clerkId: string;
 };
@@ -16,14 +15,10 @@ export default function UserContainer() {
   if (!isLoaded || !isSignedIn) {
     return null;
   }
-  let userName = user.fullName;
-  if (userName === null) {
-    userName = "John Doe";
-  }
+
   const activeUser: jobUser = {
     mail: user.emailAddresses[0].toString(),
     clerkId: user.id,
-    name: userName,
   };
 
   const { isPending, isError, data } = useQuery<applicant>({
@@ -41,7 +36,7 @@ export default function UserContainer() {
 
   return (
     <>
-      <JobContainer id={data.id} name={data.name} />
+      <JobContainer id={data.id} />
     </>
   );
 }

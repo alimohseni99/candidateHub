@@ -1,16 +1,15 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchJobs } from "../misc/fetchCalls";
-import type { jobInfo } from "./jobDisplay";
+import type { jobInfo } from "../type";
 import JobAdd from "./jobbAdd";
 import JobDisplay from "./jobDisplay";
 
 type prop = {
   id: string;
-  name: string;
 };
 
-export default function JobContainer({ id, name }: prop) {
-  const { isPending, isError, data, error } = useQuery<jobInfo[]>({
+export default function JobContainer({ id }: prop) {
+  const { isPending, isError, data } = useQuery<jobInfo[]>({
     queryKey: ["jobs"],
     queryFn: () => fetchJobs(id),
   });
@@ -20,17 +19,15 @@ export default function JobContainer({ id, name }: prop) {
   }
 
   if (isError) {
-    console.log("Error message:" + error);
     return (
       <span>We are sorry, an error has occurred. Please try again later</span>
     );
   }
   return (
     <>
-      <div className="ml-5 text-lg font-bold">Showing jobs for: {name}</div>
       <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-primary p-4 rounded-md">
         {data.map((s, key) => {
-          return <JobDisplay key={key} data={s} />;
+          return <JobDisplay key={key} {...s} />;
         })}
         <JobAdd id={id} />
       </section>
