@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
 import java.util.UUID;
 
 @Entity
@@ -15,12 +16,16 @@ public class Jobs {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private String title;
+    private String companyName;
+    private String date;
     private String status;
     private String url;
     private UUID applicantId;
 
-    public Jobs( String title, Status status, String url, UUID applicantId) {
+    public Jobs( String title, String companyName, String date, Status status, String url, UUID applicantId) {
         this.title = title;
+        this.companyName = companyName;
+        this.date = date;
         this.status = status.toString();
         this.url = url;
         this.applicantId = applicantId;
@@ -64,5 +69,21 @@ public class Jobs {
 
     public void setApplicantId(UUID applicantId) {
         this.applicantId = applicantId;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 }
