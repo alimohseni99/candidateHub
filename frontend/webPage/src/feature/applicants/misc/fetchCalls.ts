@@ -7,7 +7,7 @@ export type applicant = {
 
 const url = import.meta.env.VITE_BACKEND_URL;
 
-export function fetchApplicants() {
-  console.log("fetching with " + url + "/api/applicant");
-  return fetch(url + "/api/applicant").then((data) => data.json());
+export async function fetchApplicants() {
+  const data_1 = await fetch(url + "/api/applicant");
+  return await data_1.json();
 }
