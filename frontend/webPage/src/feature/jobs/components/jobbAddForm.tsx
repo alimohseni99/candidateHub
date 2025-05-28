@@ -7,6 +7,7 @@ export default function JobAddForm(prop: idProp) {
   async function post(formEvent: FormData) {
     const title = formEvent.get("title");
     const link = formEvent.get("link");
+
     if (link === null || title === null) {
       return;
     }
