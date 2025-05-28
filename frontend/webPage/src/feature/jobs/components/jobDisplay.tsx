@@ -21,7 +21,7 @@ export default function JobDisplay({ id, title, status, url }: jobInfo) {
           <div className="text-shadow-amber-300">{status}</div>
         </div>
         <a
-          href={"https://" + url}
+          href={url}
           target="_blank"
           className="pr-2 pl-2 font-bold text-blue-600"
         >

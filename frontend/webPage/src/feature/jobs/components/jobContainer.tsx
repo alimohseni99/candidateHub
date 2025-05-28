@@ -25,7 +25,7 @@ export default function JobContainer({ id }: prop) {
   }
   return (
     <>
-      <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-primary p-4 rounded-md">
+      <section className="flex ml-5 mr-5 gap-10 flex-wrap bg-red-500 p-4 rounded-md">
         {data.map((s, key) => {
           return <JobDisplay key={key} {...s} />;
         })}
